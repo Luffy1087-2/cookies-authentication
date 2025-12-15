@@ -1,6 +1,8 @@
-var builder = WebApplication.CreateBuilder(args);
-var app = builder.Build();
+WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
+builder.Services.AddRazorPages();
 
-app.MapGet("/", () => "Hello World!");
-
+WebApplication app = builder.Build();
+app.UseStaticFiles();
+app.UseRouting();
+app.MapRazorPages();
 app.Run();
