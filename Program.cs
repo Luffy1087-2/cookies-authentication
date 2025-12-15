@@ -5,4 +5,5 @@ WebApplication app = builder.Build();
 app.UseStaticFiles();
 app.UseRouting();
 app.MapRazorPages();
+app.MapGet("/", () => Results.Redirect("/login"));
 app.Run();
