@@ -55,3 +55,4 @@ nunit-*.xml
 
 # project
 .vs/
+/.env
