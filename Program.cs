@@ -1,7 +1,9 @@
+using cookies_authentication.DB;
 using DotEnv.Core;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 new EnvLoader().Load();
+builder.Services.AddDbContext<PostgreDbContext>();
 builder.Services.AddRazorPages();
 builder.Services.AddAuthentication(defaultScheme: "Cookie")
     .AddCookie(authenticationScheme: "Cookie", (opt) =>
